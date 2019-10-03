@@ -1,26 +1,70 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import styled from 'styled-components'
+import { MessageForm } from './components/MessageForm';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const AppContainer = styled.div`
+  max-width: 600px;
+  height: 100vh;
+  border: 1px solid black;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+`
+
+const MessagesContainer = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+`
+
+const BoldText = styled.span`
+  font-weight: bold;
+`
+
+class App extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+      messages: [{
+        user: 'darvas',
+        text: 'asdasasdjkd ashdjka dkjasdh'
+      }, {
+        user: 'darvas',
+        text: 'asdasasdjkd ashdjka dkjasdh'
+      }, {
+        user: 'darvas',
+        text: 'asdasasdjkd ashdjka dkjasdh'
+      }, {
+        user: 'darvas',
+        text: 'asdasasdjkd ashdjka dkjasdh'
+      }, {
+        user: 'darvas',
+        text: 'asdasasdjkd ashdjka dkjasdh'
+      }
+      ]
+    }
+  }
+
+  addMessage = (message) => {
+    this.setState({ messages: [...this.state.messages, message] })
+  }
+
+  render() {
+    return (
+      <AppContainer>
+        <MessagesContainer>
+          {
+            this.state.messages.map((message, index) => <p key={index}><BoldText>{message.user}</BoldText>{': ' + message.text}</p>)
+          }
+        </MessagesContainer>
+        <MessageForm addMessage={this.addMessage} />
+      </AppContainer>
+    );
+  }
 }
 
 export default App;
