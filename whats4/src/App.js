@@ -29,23 +29,7 @@ class App extends React.Component {
     super()
 
     this.state = {
-      messages: [{
-        user: 'darvas',
-        text: 'asdasasdjkd ashdjka dkjasdh'
-      }, {
-        user: 'darvas',
-        text: 'asdasasdjkd ashdjka dkjasdh'
-      }, {
-        user: 'darvas',
-        text: 'asdasasdjkd ashdjka dkjasdh'
-      }, {
-        user: 'darvas',
-        text: 'asdasasdjkd ashdjka dkjasdh'
-      }, {
-        user: 'darvas',
-        text: 'asdasasdjkd ashdjka dkjasdh'
-      }
-      ]
+      messages: []
     }
   }
 

@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 const MessageFormContainer = styled.div`
   display: flex;
-  height: 50px;
 `
 
 const UserInput = styled.input`
@@ -53,3 +52,28 @@ export class MessageForm extends React.Component {
     );
   }
 }
+
+const listaDePosts = [{
+  urlImagem: 'https://picsum.photos/300/200',
+  urlFotoUsuario: 'https://picsum.photos/100/100',
+  nomeUsuario: 'future4.br',
+  curtidoPorMim: false,
+  comentarios: [
+    {
+      texto: 'Que foto incrivel!',
+      curtidoPorMim: true
+    },
+    {
+      texto: 'Muito daora!!!',
+      curtidoPorMim: false
+    },
+  ]
+}]
+
+
+function App() {
+  return <div>
+      <MeuComponente />
+  </div>
+}
+const MeuComponente = styled.div``
